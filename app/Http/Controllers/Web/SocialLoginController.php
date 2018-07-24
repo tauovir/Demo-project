@@ -49,7 +49,7 @@ class SocialLoginController extends Controller {
                 break;
         }
         try {
-            // $user = Socialite::driver($provider)->stateless()->user();
+           
             $user = Socialite::driver($provider)->user();
             $flag = $this->findOrCreateUser($user, $socialprovider);
 
@@ -59,7 +59,7 @@ class SocialLoginController extends Controller {
             Auth::guard('customers')->loginUsingId($profileData->cust_id);
             return redirect()->intended('/');
         } catch (\Exception $ex) {
-            echo $ex->getMessage();exit;
+           
             //Session::flash('webError', trans('webMessages.exception'));
             return redirect()->back(); 
         }
@@ -93,20 +93,6 @@ class SocialLoginController extends Controller {
         }
     }
 
-    public function yahooLogin() {
-        //https://socialiteproviders.github.io/providers/yahoo.html
-     // echo "khan";exit;
-        // Your Consumer Key (API Key) goes here.  
-        define('CONSUMER_KEY', "dj0yJmk9dXFyUTdNYk94WUFwJmQ9WVdrOVVHaGhURm8wTnpJbWNHbzlNVGN6T0RnM056WTJNZy0tJnM9Y29uc3VtZXJzZWNyZXQmeD0yOQ");
-
-        // Your Consumer Secret goes here.  
-        define('CONSUMER_SECRET', "ab5c064c72091dfa2479616ab0adc975eb03fb13");
-
-        // Your application ID goes here.  
-        define('APPID', "qWerfU5c");
-      // $session = YahooSession::requireSession(CONSUMER_KEY,CONSUMER_SECRET,APPID);  
-      return Socialite::with('yahoo')->redirect();
-        exit;
-    } 
+    
     
 }
