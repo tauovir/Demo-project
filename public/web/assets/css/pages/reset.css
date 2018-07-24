@@ -1,0 +1,279 @@
+html,
+body,
+div,
+span,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+img,
+small,
+strong,
+sub,
+sup,
+center,
+ol,
+ul,
+li,
+form,
+label,
+table,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+section,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+input,
+button,
+a,
+input,
+select,
+textarea {
+    -webkit-transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+button:focus,
+a:focus {
+    outline: none;
+}
+
+a:hover,
+a:focus {
+    text-decoration: none;
+}
+
+input:-webkit-autofill {
+    -webkit-animation-name: autofill;
+    -webkit-animation-fill-mode: both;
+}
+
+
+/* Common css */
+
+.text-center {
+    text-align: center;
+}
+
+
+/* custom slider buttons */
+
+.owl-carousel .owl-dots,
+.owl-carousel .owl-nav {
+    -webkit-tap-highlight-color: transparent;
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+    width: 100%;
+    z-index: 1;
+}
+
+.owl-carousel .owl-nav button.owl-next,
+.owl-carousel .owl-nav button.owl-prev,
+.owl-carousel button.owl-dot {
+    background: 0 0;
+    color: inherit;
+    border: none;
+    padding: 0!important;
+    font: inherit;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.owl-carousel .owl-dots .owl-dot {
+    display: inline-block;
+    zoom: 1;
+}
+
+.owl-carousel .owl-dots .owl-dot span {
+    width: 8px;
+    height: 8px;
+    margin: 5px 5px;
+    background: rgba(255, 255, 255, 0.35);
+    display: block;
+    border-radius: 50%;
+}
+
+.owl-carousel .owl-dots .owl-dot.active span {
+    background: #ffffff;
+}
+
+.owl-carousel .owl-dots .owl-dot:hover span {
+    background: rgba(255, 255, 255, 0.75);
+}
+
+.owl-carousel .owl-nav button span {
+    display: none;
+}
+
+.owl-carousel .owl-nav {
+    position: absolute;
+    top: calc(50% - 15px);
+    bottom: auto;
+}
+
+.owl-carousel .owl-nav button.owl-next,
+.owl-carousel .owl-nav button.owl-prev {
+    position: absolute;
+    background-size: 40px;
+    background-position: center center;
+    width: 40px;
+    height: 50px;
+    background-repeat: no-repeat;
+}
+
+.owl-carousel .owl-nav button.owl-next {
+    right: calc(50% - 500px);
+    background-image: url('../../images/next.svg');
+}
+
+.owl-carousel .owl-nav button.owl-prev {
+    left: calc(50% - 500px);
+    background-image: url('../../images/prev.svg');
+}
+
+
+/* ripple effect */
+
+
+/* MAD-RIPPLE EFFECT */
+
+.ripple {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    border-radius: inherit;
+    pointer-events: none;
+    animation: ripple-shadow 0.2s forwards;
+    -webkit-animation: ripple-shadow 0.2s forwards;
+}
+
+.rippleWave {
+    backface-visibility: hidden;
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0.7);
+    -webkit-transform: scale(0.7);
+    background: #ffffff;
+    opacity: 0.35;
+    animation: ripple 1s forwards;
+    -webkit-animation: ripple 1s forwards;
+}
+
+@keyframes ripple-shadow {
+    0% {
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0.0);
+    }
+    20% {
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    }
+    100% {
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0.0);
+    }
+}
+
+@-webkit-keyframes ripple-shadow {
+    0% {
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0.0);
+    }
+    20% {
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    }
+    100% {
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0.0);
+    }
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(24);
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes ripple {
+    to {
+        -webkit-transform: scale(24);
+        opacity: 0;
+    }
+}

@@ -1,0 +1,1106 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Caltex Music",
+        "description": "",
+        "contact": {
+            "email": "tauovir.khan@appinventiv.com"
+        },
+        "version": "1.0"
+    },
+    "host": "caltex.appinventive.com",
+    "basePath": "/api/v1",
+    "schemes": [
+        "https"
+    ],
+    "paths": {
+        "/signup": {
+            "post": {
+                "tags": [
+                    "Registration"
+                ],
+                "summary": "Customer registration",
+                "description": "New registration",
+                "operationId": "Registration",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Basic Auth",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "cust_email",
+                        "in": "formData",
+                        "description": "email",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "cust_username",
+                        "in": "formData",
+                        "description": "user name",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "password",
+                        "in": "formData",
+                        "description": "password",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "device_id",
+                        "in": "formData",
+                        "description": "device id",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "platform",
+                        "in": "formData",
+                        "description": "1=>android,2=>ios",
+                        "required": true,
+                        "type": "number"
+                    },
+                    {
+                        "name": "device_token",
+                        "in": "formData",
+                        "description": "Device Token",
+                        "type": "string"
+                    },
+                    {
+                        "name": "lang",
+                        "in": "formData",
+                        "description": "en",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfully executed"
+                    },
+                    "201": {
+                        "description": "fail to execute"
+                    },
+                    "202": {
+                        "description": "Require parameter missing or problem"
+                    },
+                    "203": {
+                        "description": "Basic Authentication fail"
+                    },
+                    "500": {
+                        "description": "Internal server Error "
+                    }
+                },
+                "security": [
+                    {
+                        "basicAuth": [
+                            "Username: ",
+                            "Password: "
+                        ]
+                    }
+                ]
+            }
+        },
+        "/login": {
+            "post": {
+                "tags": [
+                    "Registration"
+                ],
+                "summary": "Customer Login",
+                "description": "Login",
+                "operationId": "Customer login",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Basic Auth",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "cust_email",
+                        "in": "formData",
+                        "description": "email",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "password",
+                        "in": "formData",
+                        "description": "password",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "device_id",
+                        "in": "formData",
+                        "description": "device id",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "platform",
+                        "in": "formData",
+                        "description": "1=>android,2=>ios",
+                        "required": true,
+                        "type": "number"
+                    },
+                    {
+                        "name": "device_token",
+                        "in": "formData",
+                        "description": "Device Token",
+                        "type": "string"
+                    },
+                    {
+                        "name": "lang",
+                        "in": "formData",
+                        "description": "en",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfully executed"
+                    },
+                    "201": {
+                        "description": "fail to execute"
+                    },
+                    "202": {
+                        "description": "Require parameter missing or problem"
+                    },
+                    "203": {
+                        "description": "Basic Authentication fail"
+                    },
+                    "500": {
+                        "description": "Internal server Error "
+                    }
+                },
+                "security": [
+                    {
+                        "basicAuth": [
+                            "Username: ",
+                            "Password: "
+                        ]
+                    }
+                ]
+            }
+        },
+        "/social-login": {
+            "post": {
+                "tags": [
+                    "Registration"
+                ],
+                "summary": "Social Login",
+                "description": "Social Login",
+                "operationId": "Social login",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Basic Auth",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "cust_email",
+                        "in": "formData",
+                        "description": "email",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "social_id",
+                        "in": "formData",
+                        "description": "Social Id",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "device_id",
+                        "in": "formData",
+                        "description": "device id",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "platform",
+                        "in": "formData",
+                        "description": "1=>android,2=>ios",
+                        "required": true,
+                        "type": "number"
+                    },
+                    {
+                        "name": "login_type",
+                        "in": "formData",
+                        "description": "2=>facebook,3=>google,4=>twitter5=>yahoo",
+                        "required": true,
+                        "type": "number"
+                    },
+                    {
+                        "name": "device_token",
+                        "in": "formData",
+                        "description": "Device Token",
+                        "type": "string"
+                    },
+                    {
+                        "name": "lang",
+                        "in": "formData",
+                        "description": "en",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfully executed"
+                    },
+                    "201": {
+                        "description": "fail to execute"
+                    },
+                    "202": {
+                        "description": "Require parameter missing or problem"
+                    },
+                    "203": {
+                        "description": "Basic Authentication fail"
+                    },
+                    "500": {
+                        "description": "Internal server Error "
+                    }
+                },
+                "security": [
+                    {
+                        "basicAuth": [
+                            "Username: ",
+                            "Password: "
+                        ]
+                    }
+                ]
+            }
+        },
+        "/forgot-password": {
+            "get": {
+                "tags": [
+                    "Password"
+                ],
+                "summary": "Forgot password",
+                "description": "Forgot password",
+                "operationId": "Forgot password",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Basic Auth",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "cust_email",
+                        "in": "query",
+                        "description": "email",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfully executed"
+                    },
+                    "201": {
+                        "description": "fail to execute"
+                    },
+                    "202": {
+                        "description": "Require parameter missing or problem"
+                    },
+                    "203": {
+                        "description": "Basic Authentication fail"
+                    },
+                    "500": {
+                        "description": "Internal server Error "
+                    }
+                },
+                "security": [
+                    {
+                        "basicAuth": [
+                            "Username: ",
+                            "Password: "
+                        ]
+                    }
+                ]
+            }
+        },
+        "/reset-password": {
+            "post": {
+                "tags": [
+                    "Password"
+                ],
+                "summary": "Forgot password",
+                "description": "Forgot password",
+                "operationId": "Forgot password",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Basic Auth",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "cust_email",
+                        "in": "formData",
+                        "description": "Email",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "password",
+                        "in": "formData",
+                        "description": "password",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "temporary_password",
+                        "in": "formData",
+                        "description": "Temporary password",
+                        "required": true,
+                        "type": "number"
+                    },
+                    {
+                        "name": "device_id",
+                        "in": "formData",
+                        "description": "device id",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "platform",
+                        "in": "formData",
+                        "description": "1=>android,2=>ios",
+                        "required": true,
+                        "type": "number"
+                    },
+                    {
+                        "name": "device_token",
+                        "in": "formData",
+                        "description": "Device Token",
+                        "type": "string"
+                    },
+                    {
+                        "name": "lang",
+                        "in": "formData",
+                        "description": "en",
+                        "type": "number"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfully executed"
+                    },
+                    "201": {
+                        "description": "fail to execute"
+                    },
+                    "202": {
+                        "description": "Require parameter missing or problem"
+                    },
+                    "203": {
+                        "description": "Basic Authentication fail"
+                    },
+                    "500": {
+                        "description": "Internal server Error "
+                    }
+                },
+                "security": [
+                    {
+                        "basicAuth": [
+                            "Username: ",
+                            "Password: "
+                        ]
+                    }
+                ]
+            }
+        },
+        "/check-email": {
+            "get": {
+                "tags": [
+                    "Registration"
+                ],
+                "summary": "Registration",
+                "description": "Registrations",
+                "operationId": "Registration",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Basic Auth",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "cust_email",
+                        "in": "query",
+                        "description": "Email",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfully executed"
+                    },
+                    "201": {
+                        "description": "fail to execute"
+                    },
+                    "202": {
+                        "description": "Require parameter missing or problem"
+                    },
+                    "203": {
+                        "description": "Basic Authentication fail"
+                    },
+                    "500": {
+                        "description": "Internal server Error "
+                    }
+                },
+                "security": [
+                    {
+                        "basicAuth": [
+                            "Username: ",
+                            "Password: "
+                        ]
+                    }
+                ]
+            }
+        },
+        "/check-username": {
+            "get": {
+                "tags": [
+                    "Registration"
+                ],
+                "summary": "Registration",
+                "description": "Registrations",
+                "operationId": "Registration",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Basic Auth",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "cust_username",
+                        "in": "query",
+                        "description": "user name",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfully executed"
+                    },
+                    "201": {
+                        "description": "fail to execute"
+                    },
+                    "202": {
+                        "description": "Require parameter missing or problem"
+                    },
+                    "203": {
+                        "description": "Basic Authentication fail"
+                    },
+                    "500": {
+                        "description": "Internal server Error "
+                    }
+                },
+                "security": [
+                    {
+                        "basicAuth": [
+                            "Username: ",
+                            "Password: "
+                        ]
+                    }
+                ]
+            }
+        },
+        "/contact-us": {
+            "post": {
+                "tags": [
+                    "ContactUs"
+                ],
+                "summary": "App user try to contact us",
+                "description": "Contact us",
+                "operationId": "Contact us",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Basic Auth",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "accessToken",
+                        "in": "header",
+                        "description": "AccessToken",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "message",
+                        "in": "formData",
+                        "description": "Contactus description",
+                        "required": true,
+                        "type": "number"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfully executed"
+                    },
+                    "201": {
+                        "description": "fail to execute"
+                    },
+                    "202": {
+                        "description": "Require parameter missing or problem"
+                    },
+                    "204": {
+                        "description": "Api token invalid"
+                    },
+                    "203": {
+                        "description": "Basic Authentication fail"
+                    },
+                    "205": {
+                        "description": "Your account is in active"
+                    },
+                    "206": {
+                        "description": "Your account has been blocked"
+                    },
+                    "500": {
+                        "description": "Internal server Error "
+                    }
+                },
+                "security": [
+                    {
+                        "basicAuth": [
+                            "Username: ",
+                            "Password: "
+                        ],
+                        "Api token": [
+                            "accessToken: ",
+                            "***********: "
+                        ]
+                    }
+                ]
+            }
+        },
+        "/country-list": {
+            "get": {
+                "tags": [
+                    "Countries"
+                ],
+                "summary": "Get All active country",
+                "description": "Get All active country",
+                "operationId": "Country",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Basic Auth",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfully executed"
+                    },
+                    "201": {
+                        "description": "fail to execute"
+                    },
+                    "202": {
+                        "description": "Require parameter missing or problem"
+                    },
+                    "203": {
+                        "description": "Basic Authentication fail"
+                    },
+                    "500": {
+                        "description": "Internal server Error "
+                    }
+                },
+                "security": [
+                    {
+                        "basicAuth": [
+                            "Username: ",
+                            "Password: "
+                        ]
+                    }
+                ]
+            }
+        },
+        "/update-profile": {
+            "post": {
+                "tags": [
+                    "Customer"
+                ],
+                "summary": "Profile Update",
+                "description": "Profile update",
+                "operationId": "Profile Update",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Basic Auth",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "accessToken",
+                        "in": "header",
+                        "description": "AccessToken",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "cust_dob",
+                        "in": "formData",
+                        "description": "Date of birth",
+                        "type": "string"
+                    },
+                    {
+                        "name": "cust_phone",
+                        "in": "formData",
+                        "description": "Phone",
+                        "type": "string"
+                    },
+                    {
+                        "name": "country_id",
+                        "in": "formData",
+                        "description": "Country Id",
+                        "type": "number"
+                    },
+                    {
+                        "name": "cust_state",
+                        "in": "formData",
+                        "description": "State",
+                        "type": "string"
+                    },
+                    {
+                        "name": "cust_city",
+                        "in": "formData",
+                        "description": "City ",
+                        "type": "number"
+                    },
+                    {
+                        "name": "cust_gender",
+                        "in": "formData",
+                        "description": "Gender",
+                        "type": "number"
+                    },
+                    {
+                        "name": "cust_zipcode",
+                        "in": "formData",
+                        "description": "Zipcode",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfully executed"
+                    },
+                    "201": {
+                        "description": "fail to execute"
+                    },
+                    "202": {
+                        "description": "Require parameter missing or problem"
+                    },
+                    "204": {
+                        "description": "Api token invalid"
+                    },
+                    "203": {
+                        "description": "Basic Authentication fail"
+                    },
+                    "205": {
+                        "description": "Your account is in active"
+                    },
+                    "206": {
+                        "description": "Your account has been blocked"
+                    },
+                    "500": {
+                        "description": "Internal server Error "
+                    }
+                },
+                "security": [
+                    {
+                        "basicAuth": [
+                            "Username: ",
+                            "Password: "
+                        ],
+                        "Api token": [
+                            "accessToken: ",
+                            "***********: "
+                        ]
+                    }
+                ]
+            }
+        },
+        "/change-password": {
+            "post": {
+                "tags": [
+                    "Customer"
+                ],
+                "summary": "Change passwrod",
+                "description": "Change password",
+                "operationId": "Change password",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Basic Auth",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "accessToken",
+                        "in": "header",
+                        "description": "AccessToken",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "old_password",
+                        "in": "formData",
+                        "description": "Country Id",
+                        "required": true,
+                        "type": "number"
+                    },
+                    {
+                        "name": "new_password",
+                        "in": "formData",
+                        "description": "State",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "repaet_password",
+                        "in": "formData",
+                        "description": "Gender",
+                        "required": true,
+                        "type": "number"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfully executed"
+                    },
+                    "201": {
+                        "description": "fail to execute"
+                    },
+                    "202": {
+                        "description": "Require parameter missing or problem"
+                    },
+                    "204": {
+                        "description": "Api token invalid"
+                    },
+                    "203": {
+                        "description": "Basic Authentication fail"
+                    },
+                    "205": {
+                        "description": "Your account is in active"
+                    },
+                    "206": {
+                        "description": "Your account has been blocked"
+                    },
+                    "500": {
+                        "description": "Internal server Error "
+                    }
+                },
+                "security": [
+                    {
+                        "basicAuth": [
+                            "Username: ",
+                            "Password: "
+                        ],
+                        "Api token": [
+                            "accessToken: ",
+                            "***********: "
+                        ]
+                    }
+                ]
+            }
+        },
+        "/logout": {
+            "get": {
+                "tags": [
+                    "Customer"
+                ],
+                "summary": "logout",
+                "description": "logout",
+                "operationId": "logout",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Basic Auth",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "accessToken",
+                        "in": "header",
+                        "description": "User Access Token for accessing Api",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfully executed"
+                    },
+                    "201": {
+                        "description": "fail to execute"
+                    },
+                    "202": {
+                        "description": "Require parameter missing or problem"
+                    },
+                    "204": {
+                        "description": "Api token invalid"
+                    },
+                    "203": {
+                        "description": "Basic Authentication fail"
+                    },
+                    "205": {
+                        "description": "Your account is in active"
+                    },
+                    "206": {
+                        "description": "Your account has been blocked"
+                    },
+                    "500": {
+                        "description": "Internal server Error "
+                    }
+                },
+                "security": [
+                    {
+                        "basicAuth": [
+                            "Username: ",
+                            "Password: "
+                        ]
+                    }
+                ]
+            }
+        },
+        "/last-active-time": {
+            "post": {
+                "tags": [
+                    "LastPresence"
+                ],
+                "summary": "Last Presence",
+                "description": "Login",
+                "operationId": "Customer login",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Basic Auth",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "active_time",
+                        "in": "formData",
+                        "description": "YYYY-MM-DD H:i:s",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "last_active_time",
+                        "in": "formData",
+                        "description": "YYYY-MM-DD H:i:s",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "device_id",
+                        "in": "formData",
+                        "description": "device id",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "platform",
+                        "in": "formData",
+                        "description": "1=>android,2=>ios",
+                        "required": true,
+                        "type": "number"
+                    },
+                    {
+                        "name": "accessToken",
+                        "in": "formData",
+                        "description": "Access Token",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfully executed"
+                    },
+                    "201": {
+                        "description": "fail to execute"
+                    },
+                    "202": {
+                        "description": "Require parameter missing or problem"
+                    },
+                    "203": {
+                        "description": "Basic Authentication fail"
+                    },
+                    "500": {
+                        "description": "Internal server Error "
+                    }
+                },
+                "security": [
+                    {
+                        "basicAuth": [
+                            "Username: ",
+                            "Password: "
+                        ]
+                    }
+                ]
+            }
+        },
+        "/language": {
+            "get": {
+                "tags": [
+                    "Languages"
+                ],
+                "summary": "Get All active Languages",
+                "description": "Get All active country",
+                "operationId": "Country",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Basic Auth",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfully executed"
+                    },
+                    "201": {
+                        "description": "fail to execute"
+                    },
+                    "202": {
+                        "description": "Require parameter missing or problem"
+                    },
+                    "203": {
+                        "description": "Basic Authentication fail"
+                    },
+                    "500": {
+                        "description": "Internal server Error "
+                    }
+                },
+                "security": [
+                    {
+                        "basicAuth": [
+                            "Username: ",
+                            "Password: "
+                        ]
+                    }
+                ]
+            }
+        }
+    },
+    "definitions": {},
+    "securityDefinitions": {
+        "basicAuth": {
+            "type": "basic"
+        }
+    }
+}

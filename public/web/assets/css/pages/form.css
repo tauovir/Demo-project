@@ -1,0 +1,233 @@
+::-webkit-input-placeholder {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+ ::-moz-placeholder {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+ :-ms-input-placeholder {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+ :-moz-placeholder {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+@-webkit-keyframes autofill {
+    to {
+        color: #fefefe;
+        background-color: #232323;
+    }
+}
+
+
+/* radio btn */
+
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+
+[type="radio"]:checked+label,
+[type="radio"]:not(:checked)+label {
+    position: relative;
+    padding-left: 56px;
+    cursor: pointer;
+    display: inline-block;
+    color: #ffffff;
+    font-family: 'SFUIText-Regular';
+    font-size: 22px;
+    font-weight: 100;
+    line-height: 1.2;
+}
+
+[type="radio"]:checked+label:before,
+[type="radio"]:not(:checked)+label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 25px;
+    height: 25px;
+    border: 3px solid #fc4717;
+    border-radius: 100%;
+    background: transparent;
+}
+
+[type="radio"]:checked+label:after,
+[type="radio"]:not(:checked)+label:after {
+    content: '';
+    width: 13px;
+    height: 13px;
+    background: #fc4717;
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    border-radius: 100%;
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+}
+
+[type="radio"]:not(:checked)+label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+
+[type="radio"]:checked+label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+
+/* radio btn end */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.inputWrap {
+    position: relative;
+}
+
+.inputClass {
+    background: transparent;
+    border: none;
+    width: 100%;
+    color: #000000;
+    line-height: 1.2;
+    padding: 10px 20px;
+    font-family: 'SofiaProRegular';
+    font-size: 18px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+.inputClass:focus {
+    outline: none;
+}
+
+
+/* error msg */
+
+.errorMsg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    font-size: 16px;
+    color: #fff;
+    font-family: 'SofiaProRegular';
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    padding: 0 45px 0 20px;
+    border-radius: 10px;
+    transform-origin: left top;
+    -webkit-transform-origin: left top;
+    -moz-transform-origin: left top;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    opacity: 0;
+    transform: scaleX(0);
+    -webkit-transform: scaleX(0);
+    -moz-transform: scaleX(0);
+}
+
+.errorMsg.open {
+    opacity: 1;
+    transform: scaleX(1);
+    -webkit-transform: scaleX(1);
+    -moz-transform: scaleX(1);
+}
+
+.removeMsg {
+    position: absolute;
+    right: 10px;
+    background: #fff;
+    border-radius: 50%;
+    padding: 4px 6px;
+    cursor: pointer;
+}
+
+.errorMsg .removeMsg img {
+    width: 12px;
+}
+
+
+/* textHover */
+
+.textHover {
+    position: relative;
+}
+
+.textHover:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    transform: scaleX(0) translateZ(0);
+    transform-origin: 100% 100%;
+    height: 1px;
+    background: #fc4717;
+    -webkit-transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+    transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.textHover:hover:before {
+    transform: scaleX(1) translateZ(0);
+    -webkit-transform: scaleX(1) translateZ(0);
+    transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+}
+
+
+/* image Hover */
+
+.imageHover {
+    position: relative;
+}
+
+.imageGallery .itemWrap:hover .imageHover:before,
+.imageHover:hover:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 9;
+    animation-name: stretch;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+    animation-direction: alternate;
+    animation-fill-mode: none;
+    animation-play-state: running;
+    border-radius: 50%;
+}
+
+@keyframes stretch {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+        background-color: rgba(246, 69, 22, 0.4);
+    }
+    50% {
+        opacity: 0.4;
+        background-color: rgba(246, 69, 22, 0.4);
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+        background-color: rgba(246, 69, 22, 0.4);
+    }
+}
